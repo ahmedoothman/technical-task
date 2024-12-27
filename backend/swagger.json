@@ -1,0 +1,12 @@
+{
+    "tags": [
+        {
+            "name": "Users",
+            "description": "Operations related to Users"
+        },
+        {
+            "name": "Books",
+            "description": "Operations related to Products"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: back_tech_task
+    ports:
+      - '5000:5000'
+    environment:
+      NODE_ENV: production
+    networks:
+      - app_network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: front_tech_task
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: production
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
