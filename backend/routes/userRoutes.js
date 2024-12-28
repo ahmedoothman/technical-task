@@ -172,12 +172,13 @@ router.patch('/verifyEmail/:token', authController.verifyEmail);
 /**
  * @swagger
  * paths:
- * /updateMyPassword:
- *  patch:
- *   summary: Update logged-in user's password
- *  description: Allows a logged-in user to update their password.
- *  tags: [Users]
- *  requestBody:
+ *  /updateMyPassword:
+ *    patch:
+ *      summary: Update logged-in user's password
+ *      description: Allows a logged-in user to update their password.
+ *      tags:
+ *        - Users
+ *      requestBody:
  *        required: true
  *        content:
  *          application/json:
@@ -186,17 +187,20 @@ router.patch('/verifyEmail/:token', authController.verifyEmail);
  *              properties:
  *                passwordCurrent:
  *                  type: string
+ *                  description: The user's current password
  *                password:
  *                  type: string
  *                  format: password
+ *                  description: The new password
  *                passwordConfirm:
- *                 type: string
- *                 format: password
+ *                  type: string
+ *                  format: password
+ *                  description: Confirmation of the new password
  *      responses:
  *        200:
- *          description: Login successful
+ *          description: Password updated successfully
  *        400:
- *          description: Invalid emaiwl or password
+ *          description: Invalid current password or mismatched new password
  */
 router.patch(
     '/updateMyPassword',
